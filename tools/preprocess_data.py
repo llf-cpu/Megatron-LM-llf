@@ -150,7 +150,7 @@ class Partition(object):
         encoder = Encoder(self.args)
         tokenizer = build_tokenizer(self.args)
         pool = multiprocessing.Pool(self.workers, initializer=encoder.initializer)
-        encoded_docs = pool.imap(encoder.encode, fin, 32)
+        encoded_docs = pool.imap(encoder.encode, fin, 25)
 
         level = "document"
         if self.args.split_sentences:
